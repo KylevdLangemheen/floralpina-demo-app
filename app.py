@@ -4,7 +4,7 @@
 import streamlit as st
 import pickle
 from PIL import Image
-from utils import predict_one, iter_top_proba_predictions, classes, load_model
+from utils import predict_one, iter_top_proba_predictions, classes, load_model, CenterCropMin
 
 # Title
 st.title("Floralpina Demo App")
@@ -52,12 +52,15 @@ if uploaded_file is None:
 def get_model():
     return load_model('./data/model/last_layer.pt')
 
+centercrop = CenterCropMin()
+
 # Loading the model and getting predictions might take a while.
 # Display a spinner while busy.
 col1, col2 = st.columns([1,2])
 with st.spinner("Making prediction..."):
     # Open image with PIL
     image = Image.open(uploaded_file)
+    image = centercrop(image)
 
     # Display the image
     col1.image(image, caption="Uploaded Image", use_container_width=True)
