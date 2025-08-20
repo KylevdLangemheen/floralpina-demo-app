@@ -59,7 +59,7 @@ centercrop = CenterCropMin()
 col1, col2 = st.columns([1,2])
 with st.spinner("Making prediction..."):
     # Open image with PIL
-    image = Image.open(uploaded_file)
+    image = Image.open(uploaded_file).convert("RGB")
     image = centercrop(image)
 
     # Display the image
