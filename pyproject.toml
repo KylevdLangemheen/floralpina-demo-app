@@ -1,0 +1,13 @@
+[project]
+name = "floralpina-demo-app"
+version = "0.1.0"
+description = "Fake demo app for a fake company."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "authlib>=1.6.1",
+    "streamlit>=1.48.1",
+    "streamlit-authenticator>=0.4.2",
+    "torch>=2.8.0",
+    "torchvision>=0.23.0",
+]

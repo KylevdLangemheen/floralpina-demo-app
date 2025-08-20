@@ -1,0 +1,7 @@
+pandas
+altair
+streamlit
+authlib
+streamlit-authenticator
+torch
+torchvision
