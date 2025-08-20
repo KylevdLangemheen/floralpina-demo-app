@@ -48,7 +48,7 @@ if uploaded_file is None:
 # Image has been uploaded.
 
 # Cache the model
-# @st.cache_resource
+@st.cache_resource
 def get_model():
     return load_model('./data/model/last_layer.pt')
 
