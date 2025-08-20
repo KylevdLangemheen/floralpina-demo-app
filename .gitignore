@@ -15,3 +15,4 @@ ASSIGNMENT.md
 *.ipynb
 /data
 *.bin
+uv.lock
